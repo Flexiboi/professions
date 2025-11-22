@@ -1,0 +1,24 @@
+{
+   "error": {
+      "invalid_syntax": "ERROR 404",
+      "player_not_found": "Speler niet gevonden",
+      "add_profession_failed": "Lukte niet om beroep %s toe te voegen.. Misschien heeft de burger dit beroep al?",
+      "remove_profession_failed": "Lukte niet om beroep %s te verwijderen.. Misschien heeft de burger dit beroep niet?",
+      "invalid_vehicle": "Onbekend voertuig. Contacteer de burgemeester.."
+   },
+   "success": {
+      "profession_added": "Beroep %s succesvol toegevoegd aan burger",
+      "remove_profession": "Beroep %s succesvol verwijderd van burger",
+      "gotVehicle": "Je hebt een voertuig gekregen van de staat! Hij staat op je te wachten in de blokkenpark garage."
+   },
+   "progress": {
+   },
+   "info": {
+      "player_no_professions": "Deze burger heeft geen beroepen.",
+      "player_professions": "Beroep(en): %s"
+   },
+   "discord": {
+      "event": "Nieuwe sollicitatie van %s",
+      "message": "**Naam:** %s\n**Leeftijd:** %s\n**Motivatie:** %s\n**Waarom hij/zij bij ons zou passen:** %s\n**Discord:** %s\n**IC Nummer:** %s"
+   }
+}

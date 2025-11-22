@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex_professions</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="container">
+        <h1 id="title"></h1>
+        <h2 id="desc"></h2>
+        <div id="jobs">
+        </div>
+        <div id="applicationOverlay" class="overlay" style="display:none;">
+            <div id="applicationForm" class="application">
+                <h1>Application form</h1>
+                <form id="jobForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                    <label for="birth">Date of birth</label>
+                    <input type="date" id="birth" name="birth" required>
+
+                    <label for="why">Why do you want this job?</label>
+                    <textarea id="why" name="why" rows="4" placeholder="Tell us why you are interested..." required></textarea>
+
+                    <label for="fit">Why are you a good match?</label>
+                    <textarea id="fit" name="fit" rows="4" placeholder="Tell us why you are suitable..." required></textarea>
+
+                    <div class="form-buttons">
+                        <div class="btn submit">Send</div>
+                        <div class="btn cancel">Cancel</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="script.js"></script>
+    <script>
+        const container = document.getElementById('jobs');
+
+        container.addEventListener('wheel', (e) => {
+        if (e.deltaY !== 0) {
+            e.preventDefault();
+            container.scrollLeft += e.deltaY;
+
+            // When scrolled to the end, jump to the start
+            if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+            container.scrollLeft = 0;
+            }
+
+            // When scrolled to the start, jump to the end
+            else if (container.scrollLeft <= 0) {
+            container.scrollLeft = container.scrollWidth;
+            }
+        }
+        });
+    </script>
+</html>

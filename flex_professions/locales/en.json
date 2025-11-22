@@ -1,0 +1,24 @@
+{
+   "error": {
+      "invalid_syntax": "ERROR 404",
+      "player_not_found": "Player not found",
+      "add_profession_failed": "Couldn't add profession %s. Maybe the citizen already has this profession?",
+      "remove_profession_failed": "Couldn't delete profession %s. Maybe the citizen doesn't have this profession?",
+      "invalid_vehicle": "Unknown vehicle. Contact the mayor.."
+   },
+   "success": {
+      "profession_added": "Occupation %s successfully added to citizen",
+      "remove_profession": "Occupation %s successfully removed from citizen",
+      "gotVehicle": "You have been given a vehicle by the state! He is waiting for you in the block park garage."
+   },
+   "progress": {
+   },
+   "info": {
+      "player_no_professions": "This citizen has no professions.",
+      "player_professions": "Occupation(s): %s"
+   },
+   "discord": {
+      "event": "New application from %s",
+      "message": "**Name:** %s\n**Age:** %s\n**Motivation:** %s\n**Why he/she would suit us:** %s\n**Discord:** %s\n**IC Number:** %s"
+   }
+}

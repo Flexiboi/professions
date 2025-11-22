@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Golos+Text:wght@400..900&family=Pathway+Gothic+One&display=swap');
+:root {
+    --main-background-color: #2b2828;
+    --main-gradient-background: linear-gradient(41deg,rgba(43, 40, 40, 1) 0%, rgba(38, 36, 36, 1) 50%, rgba(31, 31, 31, 1) 100%);
+    --job-background-color: #ffffff;
+    --job-gradient-background: linear-gradient(41deg,rgba(255, 255, 255, 1) 0%, rgba(247, 247, 247, 1) 50%, rgba(247, 245, 245, 1) 100%);
+    --btn-gradient-color: #684b75;
+    --btn-gradient-background: linear-gradient(41deg,rgba(104, 75, 117, 1) 0%, rgba(124, 84, 145, 1) 50%, rgba(107, 71, 115, 1) 100%);;
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+    font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+h1 {
+    font-weight: 600;
+    letter-spacing: 10px;
+    margin-bottom: -1.6vh;
+}
+
+h2 {
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+#container {
+    /* display: none; */
+    position: fixed;
+    inset: 0px;
+    width: 100vw;
+    height: 100vw;
+    max-width: 100vw;
+    max-height: 100dvh;
+    margin: auto;
+    background: var(--main-background-color);
+    background: var(--main-gradient-background);
+}
+
+#container h1 {
+    margin-top: 2vw;
+    font-size: 3vw;
+    text-shadow: 0 0 0.2vw rgba(0, 0, 0, 0.3);
+}
+
+#jobs {
+    position: fixed;
+    inset: 0;
+    width: 95vw;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    margin: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+#jobs::-webkit-scrollbar {
+    display: none;
+}
+
+.profession {
+    position: relative;
+    flex: 0 0 auto;
+    margin: .8vw;
+    width: 17vw;
+    height: 22vw;
+    color: rgb(18, 18, 18);
+    background: var(--job-background-color);
+    background: var(--job-gradient-background);
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3vw;
+    box-shadow: 0 0.2vw 0.2vw rgba(0, 0, 0, 0.1);
+    border-top: solid 0.5vw;
+    opacity: 0.7;
+    filter: blur(2px);
+    transition: filter 220ms ease, transform 220ms ease;
+}
+
+.profession h2 {
+    font-size: 2.5vw;
+    font-weight: 400;
+}
+
+.profession p {
+    font-size: .8vw;
+    padding: 5vh;
+}
+
+.profession .btn {
+    position: absolute;
+    bottom: 1vw;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5vh;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    padding: 1.5vh 2vw;
+    background: var(--btn-gradient-background);
+    white-space: nowrap;
+    max-width: 90%;
+    text-overflow: ellipsis; 
+    overflow: hidden;
+    transition: all .15s ease;
+}
+
+.profession .btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0.5vw rgba(0,0,0,0.3);
+}
+
+.profession:hover,
+.profession:focus {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(-0.25vw) scale(1.02);
+    z-index: 2;
+}
+
+/* Dark semi-transparent background to block clicks behind */
+.overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999; /* on top of everything */
+}
+
+/* Centered form box */
+.application {
+    overflow: hidden;
+    position: relative;
+    width: 35vw;
+    max-width: 600px;
+    background: var(--job-gradient-background);
+    border-top: 0.5vw solid var(--btn-gradient-color);
+    border-radius: 0.6vw;
+    box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.25);
+    padding: 2vw;
+    color: rgb(18, 18, 18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+#applicationForm h1 {
+    font-size: 2vw;
+    margin-top: -1vw;
+    margin-bottom: 1vw;
+}
+
+.application .btn {
+    position: relative;
+    font-size: 2.5vh;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    padding: 1.5vh 2vw;
+    background: var(--btn-gradient-background);
+    white-space: nowrap;
+    max-width: 90%;
+    text-overflow: ellipsis; 
+    overflow: hidden;
+    transition: all .15s ease;
+}
+
+.application .btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0.5vw rgba(0,0,0,0.3);
+}
+
+/* Center text and inputs neatly */
+.application form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1vw;
+}
+
+.application label {
+    text-align: left;
+    font-weight: 500;
+    font-size: 1vw;
+}
+
+.application input,
+.application textarea {
+    width: 93%;
+    border: none;
+    outline: none;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 1vw;
+    padding: 0.8vw;
+    border-radius: 0.3vw;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: inset 0 0.1vw 0.3vw rgba(0, 0, 0, 0.1);
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vw;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
